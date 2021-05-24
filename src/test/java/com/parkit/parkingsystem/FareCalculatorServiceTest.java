@@ -99,6 +99,7 @@ public class FareCalculatorServiceTest {
     assertEquals((0.75 * Fare.BIKE_RATE_PER_HOUR), ticket.getPrice());
   }
 
+  // Use of DisplayName tag and assertThat to better read the test.
   @Test
   @DisplayName("45 minutes of parking a car = 3/4th of the FARE.")
   public void calculateFareCarWithLessThanOneHourParkingTime() {
@@ -131,5 +132,4 @@ public class FareCalculatorServiceTest {
     fareCalculatorService.calculateFare(ticket);
     assertThat(ticket.getPrice()).isEqualTo(24 * Fare.CAR_RATE_PER_HOUR);
   }
-
 }
