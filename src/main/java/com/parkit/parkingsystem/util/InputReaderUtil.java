@@ -9,8 +9,13 @@ import org.apache.logging.log4j.Logger;
  *
  */
 public class InputReaderUtil {
-
-  private static Scanner scan = new Scanner(System.in);
+  /*
+   * Added UTF-8 to correct a bug : Found reliance on default encoding in
+   * com.parkit.parkingsystem.util.InputReaderUtil.<static initializer for InputReaderUtil>(): new
+   * java.util.Scanner(InputStream)
+   * 
+   */
+  private static Scanner scan = new Scanner(System.in, "UTF-8");
   private static final Logger logger = LogManager.getLogger("InputReaderUtil");
 
   /**
