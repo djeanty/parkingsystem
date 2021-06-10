@@ -279,4 +279,17 @@ public class FareCalculatorServiceTest {
     assertThat(ticket.getPrice()).isEqualTo(Fare.BIKE_RATE_PER_HOUR);
   }
 
+  @Test
+  @DisplayName("The price is discounted by 5%.")
+  public void applyDiscountTest() {
+    // GIVEN
+    double priceBefore = ticket.getPrice();
+
+    // WHEN
+    fareCalculatorService.applyDiscount(ticket);
+    double priceAfter = ticket.getPrice();
+
+    // THEN
+    assertThat(priceAfter).isEqualTo(priceBefore - (priceBefore * 0.05));
+  }
 }

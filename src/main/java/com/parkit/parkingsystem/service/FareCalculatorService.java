@@ -54,4 +54,10 @@ public class FareCalculatorService {
       }
     }
   }
+
+  public void applyDiscount(Ticket ticket) {
+    double priceBeforeDiscount = ticket.getPrice();
+    double priceAfterDiscount = priceBeforeDiscount - (0.05 * priceBeforeDiscount);
+    ticket.setPrice(priceAfterDiscount);
+  }
 }
